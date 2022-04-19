@@ -8,8 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @ComponentScan(basePackages= {"com.qa.cake"})
 public class CakeApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
 		SpringApplication.run(CakeApplication.class, args);
+		System.out.println("Application Started");
 	}
 
 }
