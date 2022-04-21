@@ -56,4 +56,9 @@ public class CakeService {
 		}
 		return null;
 	}
+
+	public Cake getByCakeName(String cakeName) {
+		
+		return null;
+	}
 }
