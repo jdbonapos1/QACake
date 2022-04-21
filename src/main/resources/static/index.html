@@ -9,7 +9,8 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="./CSS/index.css" rel="stylesheet">
 </head>
-<body>
+
+<body onload="loadCakes()">
     <div class="container-fluid">
         <!-- Header row -->
         <header>
@@ -19,7 +20,7 @@
                         alt="Logo">
                 </div>
                 <div class="col" >
-                    <h1>Title goes here</h1>
+                    <h1>Eri's Cakeclopedia</h1>
                 </div>
                 <div class="col" >
                     <img src="https://silicondales.com/wp-content/uploads/2012/05/twitter-logo.jpg" alt="twitter">
@@ -29,11 +30,10 @@
             <!-- Search row -->
             <div class="row">
                 <div class="col" >
-                    <h1>SLOGAN</h1>
+                    <h1>Knowin' what to bake, is a piece of cake!</h1>
                 </div>
                 <div class="col">
                     <form >
-                        <input id="searchName" placeholder="Search for a cake using cake name..." type="text">
                         <!-- Button trigger search modal -->
                         <input id="searchName" placeholder="cake using name..." type="text">
                         <button id="searchButton2" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal">
@@ -41,7 +41,6 @@
                         </button>
                         <input id="searchId" placeholder="cake using id..." type="number">
                         <button id="searchButton" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal">
-    
                             Search Id
                         </button>
                         
@@ -55,7 +54,7 @@
                                         <button id="searchTopClose" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body" id="searchModalBody">
-
+                                     
                                     </div>
                                     <div class="modal-footer">
                                         <button id="searchModalClose" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -85,17 +84,17 @@
         <footer>
             <!-- Cake creation section -->
             <div class="row">
-                <div class="col" id="createBox">
+                <div class="col" id="createBox" onload="loadCakes()">
                     <h1>Manage Cake</h1>
                     <form>
-                        <h3>Make a cake!</h3>
+                        <h3>Create a cake</h3>
                         <div class="row g-2 align-items-center">
                             <div class="col-auto">
                                 <label for="cakeNameInput" class="col-form-label">Cake Name</label>
                             </div>
                             <div class="col-auto">
                                 <input id="cakeNameInput" class="form-control"
-                                    >
+                                   maxlength="255" >
                             </div>
                         </div>
                         <div class="row g-2 align-items-center">
@@ -103,7 +102,7 @@
                                 <label for="cakeDescriptionInput" class="col-form-label">Description and recipe</label>
                             </div>
                             <div class="col-auto">
-                                <textarea id="cakeDescriptionInput" class="form-control" rows="3"></textarea>
+                                <textarea id="cakeDescriptionInput" class="form-control" rows="3" maxlength="255"></textarea>
                             </div>
                         </div>
                         <div class="row g-3 align-items-center">
@@ -112,7 +111,7 @@
                             </div>
                             <div class="col-auto">
                                 <input id="cakeURLInput" class="form-control"
-                                    >
+                                   maxlength="255" >
                             </div>
                             <div class="col-auto">
                                 <input id="createButton" class="btn btn-success" type="button" value="Create">
@@ -133,7 +132,7 @@
                                 <label for="updateCakeNameInput" class="col-form-label">Cake Name</label>
                             </div>
                             <div class="col-auto">
-                                <input id="updateCakeNameInput" class="form-control">
+                                <input id="updateCakeNameInput" class="form-control" maxlength="255">
                             </div>
                         </div>
                         <div class="row g-2 align-items-center">
@@ -141,7 +140,7 @@
                                 <label for="updateCakeDescriptionInput" class="col-form-label">Description and recipe</label>
                             </div>
                             <div class="col-auto">
-                                <textarea id="updateCakeDescriptionInput" class="form-control" rows="3"></textarea>
+                                <textarea id="updateCakeDescriptionInput" class="form-control" rows="3" maxlength="255"></textarea>
                             </div>
                         </div>
                         <div class="row g-3 align-items-center">
@@ -149,7 +148,7 @@
                                 <label for="updateCakeURLInput" class="col-form-label">Image URL</label>
                             </div>
                             <div class="col-auto">
-                                <input id="updateCakeURLInput" class="form-control">
+                                <input id="updateCakeURLInput" class="form-control" maxlength="255">
                             </div>
                             <div class="col-auto">
                                 <input id="updateButton" class="btn btn-warning" type="button" value="Update" onclick="updateCake()">
@@ -159,13 +158,13 @@
                 </div>
                 <div class="col">
                     <div class="row" id="box">
-                        <H1>CAKE OF THE DAY</H1>
+                        <H1>Ube Cake</H1>
                         <div class="card" style="width: 18rem;">
-                            <img src="https://cafedelites.com/wp-content/uploads/2018/05/Red-Velvet-Cake-IMAGE-43.jpg"
+                            <img src="https://theunlikelybaker.com/wp-content/uploads/2016/11/Ube-Cake-Filipino-Purple-Yam-Cake-FB.jpg"
                                 class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title"> Cake of the day</h5>
-                                <p class="card-text">Cake Recipe</p>
+                                <h5 class="card-title"> Cake of the day!!</h5>
+                                <p class="card-text">Lovely</p>
                             </div>
                         </div>
                     </div>

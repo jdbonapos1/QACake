@@ -5,14 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.qa.cake.domain.Cake;
 import com.qa.cake.repository.CakeRepository;
+
 @Service
-<<<<<<< HEAD
 public class CakeService { 
 
-=======
-public class CakeService {
-	
->>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
 	@Autowired
 	private CakeRepository repository;
 	
@@ -35,11 +31,7 @@ public class CakeService {
 		}
 		return null;
 	}
-<<<<<<< HEAD
 	
-=======
-
->>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
 	public Cake getByCakeName(String cakeName) {
 		Optional<Cake> optionalCake = repository.findByCakeName(cakeName);
 		if(optionalCake.isPresent()) {
@@ -47,11 +39,7 @@ public class CakeService {
 		}
 		return null;
 	}
-<<<<<<< HEAD
 	
-=======
-
->>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
 	public boolean remove(Long id) {
 		repository.deleteById(id);
 		return repository.existsById(id);
@@ -67,11 +55,6 @@ public class CakeService {
 			repository.saveAndFlush(optionalCake.get());
 			return optionalCake.get();
 		}
-		return null;
-	}
-
-	public Cake getByCakeName(String cakeName) {
-		
 		return null;
 	}
 }

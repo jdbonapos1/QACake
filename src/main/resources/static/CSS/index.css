@@ -1,51 +1,47 @@
+ 
 /* App wide css */
 p {
     text-align: center;
 }
+
 h2 {
     text-align: center;
 }
+
 div {
     text-align: center;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
 .card.cake{
     width: 300px;
     border: 10px solid rgb(206, 110, 33);
     padding: 10px;
     margin: 5px;
 }
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
 hr {
     border: 10px solid rgb(255, 0, 0);
     border-radius: 5px;
 }
+
 #displayBox {
     width: 300px;
     border: 10px solid green;
     padding: 0px;
     margin: 5px;
 }
+
 #box {
     width: 300px;
     border: 10px solid rgb(206, 110, 33);
     padding: 10px;
     margin: 5px;
 }
+
 #createBox {
     width: 300px;
     border: 10px solid rgb(206, 110, 33);
     padding: 10px;
     margin: 5px;
-<<<<<<< HEAD
 }
-=======
-}   
->>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
