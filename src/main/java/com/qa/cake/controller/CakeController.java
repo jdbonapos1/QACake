@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.qa.cake.domain.Cake;
 import com.qa.cake.service.CakeService;
@@ -29,6 +30,7 @@ public class CakeController {
 		this.service = service;
 	}
 
+	@CrossOrigin
 	@PostMapping("/createCake")
 	public ResponseEntity<Cake> createCake(@RequestBody Cake cake) {
 		return new ResponseEntity<Cake>(service.create(cake), HttpStatus.CREATED);
@@ -39,6 +41,7 @@ public class CakeController {
 		return ResponseEntity.ok(service.getAll());
 	}
 
+	@CrossOrigin
 	@GetMapping("/getOne/{index}")
 	public ResponseEntity<Cake> getCakeById(@PathVariable Long index) {
 		try {
@@ -47,7 +50,8 @@ public class CakeController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-
+	
+	@CrossOrigin
 	@PutMapping("/update/{index}")
 	public ResponseEntity<Cake> updateCakeById(@PathVariable Long index, @RequestBody Cake cake) {
 		try {
@@ -57,6 +61,7 @@ public class CakeController {
 		}
 	}
 	
+	@CrossOrigin	
 	@DeleteMapping("/remove/{index}")
 	public ResponseEntity<Boolean> removeCharacter(@PathVariable Long index){
 		try {
