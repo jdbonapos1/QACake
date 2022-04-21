@@ -6,6 +6,10 @@ const createButton = document.querySelector("#createButton");
 const cakeName = document.querySelector("#cakeNameInput");
 const cakeURL = document.querySelector("#cakeURLInput");
 const cakeDescription = document.querySelector("#cakeDescriptionInput");
+<<<<<<< HEAD
+=======
+
+>>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
 //search
 const searchId = document.querySelector("#searchId");
 const searchName = document.querySelector("#searchName");
@@ -32,13 +36,19 @@ const addCakeToContentArea = (res) => {
     img.setAttribute("src", `${res.data.cakeURL}`);
     img.setAttribute("class", "card-img-top");
     img.setAttribute("alt", `${res.data.cakeName}`);
+<<<<<<< HEAD
     img.setAttribute("id",`URL${res.data.id}`);
+=======
+>>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
     mainDiv.appendChild(img);
     //card body
     const bodyDiv = document.createElement("div");
     bodyDiv.setAttribute("class", "card-body");
     const h5 = document.createElement("h5");
+<<<<<<< HEAD
     h5.setAttribute("id",`cardCakeName${res.data.id}`)
+=======
+>>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
     const text = document.createTextNode(`${res.data.cakeName}`);
     h5.appendChild(text);
     bodyDiv.appendChild(h5);
@@ -64,11 +74,16 @@ const addCakeToContentArea = (res) => {
     const modalHeader = document.createElement("div");
     modalHeader.setAttribute("class", "modal-header");
     const modalId = document.createElement("h6");
+<<<<<<< HEAD
     modalId.setAttribute("id", `cakeId${res.data.id}`);
+=======
+    modalId.setAttribute("id", "cakeId");
+>>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
     const text3 = document.createTextNode(`${res.data.id}`);
     modalId.appendChild(text3);
     const modalName = document.createElement("h5");
     modalName.setAttribute("class", "modal-title");
+<<<<<<< HEAD
     modalName.setAttribute("id", `ModalLabel${res.data.id}`);
     const text4 = document.createTextNode(`${res.data.cakeName}`);
     const h52 = document.createElement("h5");
@@ -77,6 +92,12 @@ const addCakeToContentArea = (res) => {
     
     modalName.appendChild(modalId);
     modalName.appendChild(h52);
+=======
+    modalName.setAttribute("id", `${res.data.id}ModalLabel`);
+    const text4 = document.createTextNode(`${res.data.cakeName}`);
+    modalName.appendChild(modalId);
+    modalName.appendChild(text4);
+>>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
     modalHeader.appendChild(modalName);
     const closeButton = document.createElement("button");
     closeButton.setAttribute("type", "button");
@@ -87,7 +108,10 @@ const addCakeToContentArea = (res) => {
     modalContent.appendChild(modalHeader);
     const modalBody = document.createElement("div");
     modalBody.setAttribute("class", "modal-body");
+<<<<<<< HEAD
     modalBody.setAttribute("id",`modal-body${res.data.id}`);
+=======
+>>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
     const text5 = document.createTextNode(`${res.data.cakeDescription}`);
     modalBody.appendChild(text5);
     modalContent.appendChild(modalBody);
@@ -130,6 +154,7 @@ const createCake = () => {
         .then(res => {
             console.log(res);
             addCakeToContentArea(res);
+<<<<<<< HEAD
             resetCreateForm();
         }).catch(err => console.log(err));
 }
@@ -139,10 +164,19 @@ const resetCreateForm = () => {
     cakeURL.value = "";
     cakeDescription.value = "";
 }
+=======
+        }).catch(err => console.log(err));
+}
+
+>>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
 
 // search for a cake using name - faulty
 const getCakeByName = () => {
     const cakeName = searchName.value;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
     axios
         .get(`${URL}/getOneByName/${cakeName}`)
         .then(res => {
@@ -153,19 +187,37 @@ const getCakeByName = () => {
         })
         .catch(err => console.log(err));
 }
+<<<<<<< HEAD
 // search for a cake using id
 const getCakeById = () => {
     const cakeId = searchId.value;
+=======
+
+
+// search for a cake using id
+const getCakeById = () => {
+    const cakeId = searchId.value;
+
+>>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
     axios
         .get(`${URL}/getOne/${cakeId}`)
         .then(res => {
             const text = document.createTextNode(`${res.data.cakeName}`);
             searchTitle.appendChild(text);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
             const text2 = document.createTextNode(`${res.data.cakeDescription}`);
             searchBody.appendChild(text2);
         })
         .catch(err => console.log(err));
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
 const resetModal = () => {
     searchBody.innerHTML = "";
     searchTitle.innerHTML = "";
@@ -195,7 +247,11 @@ const updateCake = () => {
         "id" : updateId.value,
         "cakeName" : updateName.value, 
         "cakeDescription" : updateDescription.value,
+<<<<<<< HEAD
         "cakeURL" : updateURL.value
+=======
+        "updateURL" : updateURL.value
+>>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
     }
     axios
         .put(`${URL}/update/${updateId.value}`,obj)
@@ -207,6 +263,7 @@ const updateCake = () => {
 }
 
 const updateDisplay = (res) => {
+<<<<<<< HEAD
     const cardName = document.querySelector(`#cardCakeName${res.data.id}`);
     cardName.innerHTML = `${res.data.cakeName}`;
     const cardURL = document.querySelector(`#URL${res.data.id}`);
@@ -217,6 +274,11 @@ const updateDisplay = (res) => {
     const modalBody = document.querySelector(`#modal-body${res.data.id}`);
     modalBody.innerHTML = `${res.data.cakeDescription}`;
 }
+=======
+    const toUpdate = document.querySelector(`#`);
+}
+
+>>>>>>> 047ed19c2ebbb7a208aede4994634a62cfb690c4
 //Event listeners
 createButton.addEventListener("click", createCake);
 searchButton.addEventListener("click", getCakeById);
