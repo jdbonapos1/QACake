@@ -6,28 +6,22 @@ const createButton = document.querySelector("#createButton");
 const cakeName = document.querySelector("#cakeNameInput");
 const cakeURL = document.querySelector("#cakeURLInput");
 const cakeDescription = document.querySelector("#cakeDescriptionInput");
+
 //search
-const nameInput = document.querySelector("#searchName");
+const searchId = document.querySelector("#searchId");
+const searchName = document.querySelector("#searchName");
 const searchButton = document.querySelector("#searchButton");
+const searchButton2 = document.querySelector("#searchButton2")
 const searchTitle = document.querySelector("#searchModalTitle");
 const searchBody = document.querySelector("#searchModalBody");
 const searchTopClose = document.querySelector("#searchTopClose");
 const searchModalClose = document.querySelector("#searchModalClose");
-
 //delete + update
-
-
-
 const updateButton = document.querySelector("#updateButton");
 const updateId = document.querySelector("#updateCakeIdInput");
 const updateName = document.querySelector("#updateCakeNameInput");
 const updateDescription = document.querySelector("#updateCakeDescriptionInput");
 const updateURL = document.querySelector("#updateCakeURLInput");
-
-
-
-
-
 //Create a cake
 const addCakeToContentArea = (res) => {
     const mainDiv = document.createElement("div");
@@ -99,8 +93,6 @@ const addCakeToContentArea = (res) => {
     deleteButton.setAttribute("data-bs-dismiss", "modal");
     deleteButton.setAttribute("id", "deleteButton");
     deleteButton.setAttribute("onClick", `deleteCake(${res.data.id})`);
-
-
     const text7 = document.createTextNode("Delete");
     deleteButton.appendChild(text7);
     modalFooter.appendChild(deleteButton);
@@ -134,9 +126,12 @@ const createCake = () => {
             addCakeToContentArea(res);
         }).catch(err => console.log(err));
 }
-// search for a cake using name
+
+
+// search for a cake using name - faulty
 const getCakeByName = () => {
-    const cakeName = nameInput.value;
+    const cakeName = searchName.value;
+
     axios
         .get(`${URL}/getOneByName/${cakeName}`)
         .then(res => {
@@ -147,26 +142,42 @@ const getCakeByName = () => {
         })
         .catch(err => console.log(err));
 }
+
+
+// search for a cake using id
+const getCakeById = () => {
+    const cakeId = searchId.value;
+
+    axios
+        .get(`${URL}/getOne/${cakeId}`)
+        .then(res => {
+            const text = document.createTextNode(`${res.data.cakeName}`);
+            searchTitle.appendChild(text);
+
+            const text2 = document.createTextNode(`${res.data.cakeDescription}`);
+            searchBody.appendChild(text2);
+        })
+        .catch(err => console.log(err));
+}
+
+
 const resetModal = () => {
     searchBody.innerHTML = "";
     searchTitle.innerHTML = "";
 }
-
-
 // delete a cake
 const deleteCake = (id) => {
     const toRemoveFromDisplay = document.querySelector(`#mainDiv${id}`);
-
     axios
         .delete(`${URL}/remove/${id}`)
         .then(res => {
+            console.log(res);
             while(toRemoveFromDisplay.firstChild){
                 toRemoveFromDisplay.removeChild(toRemoveFromDisplay.firstChild);
             }
             display.removeChild(toRemoveFromDisplay);
         }).catch(err => console.log(err));
 }
-
 //update a cake
 const resetUpdateForm = () => {
     updateId.value = "";
@@ -174,7 +185,6 @@ const resetUpdateForm = () => {
     updateDescription.value = "";
     updateURL.value = "";
 }
-
 const updateCake = () => {
     let obj = {
         "id" : updateId.value,
@@ -182,7 +192,6 @@ const updateCake = () => {
         "cakeDescription" : updateDescription.value,
         "updateURL" : updateURL.value
     }
-
     axios
         .put(`${URL}/update/${updateId.value}`,obj)
         .then(res =>{
@@ -193,12 +202,13 @@ const updateCake = () => {
 }
 
 const updateDisplay = (res) => {
-    const toUpdate = document.querySelector(`#`)
+    const toUpdate = document.querySelector(`#`);
 }
 
 //Event listeners
 createButton.addEventListener("click", createCake);
-searchButton.addEventListener("click", getCakeByName);
+searchButton.addEventListener("click", getCakeById);
+searchButton2.addEventListener("click", getCakeByName);
 searchModalClose.addEventListener("click", resetModal);
 searchTopClose.addEventListener("click",resetModal);
 updateButton.addEventListener("click", updateCake);
