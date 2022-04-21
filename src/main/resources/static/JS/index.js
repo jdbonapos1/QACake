@@ -11,9 +11,13 @@ const nameInput = document.querySelector("#searchName");
 const searchButton = document.querySelector("#searchButton");
 const searchTitle = document.querySelector("#searchModalTitle");
 const searchBody = document.querySelector("#searchModalBody");
+const searchTopClose = document.querySelector("#searchTopClose");
+const searchModalClose = document.querySelector("#searchModalClose");
 
-//delete
+//delete + update
 const cakeId = document.querySelector("#cakeId");
+const searchDeleteButton = document.querySelector("#searchDeleteButton");
+
 
 
 
@@ -25,7 +29,6 @@ const addCakeToContentArea = (res) => {
     mainDiv.setAttribute("class", "card cake");
     mainDiv.setAttribute("style", "width: 18rem;");
     mainDiv.setAttribute("id", `mainDiv${res.data.id}`);
-
     //card image
     const img = document.createElement("img");
     img.setAttribute("src", `${res.data.cakeURL}`);
@@ -45,13 +48,8 @@ const addCakeToContentArea = (res) => {
     cardButton.setAttribute("data-bs-toggle", "modal");
     cardButton.setAttribute("data-bs-target", `#Modal${res.data.id}`);
     const text2 = document.createTextNode("Show More!");
-
-
-
-
     cardButton.appendChild(text2);
     bodyDiv.appendChild(cardButton);
-
     //modal
     const modalDiv = document.createElement("div");
     modalDiv.setAttribute("class", "modal fade");
@@ -65,21 +63,17 @@ const addCakeToContentArea = (res) => {
     modalContent.setAttribute("class", "modal-content");
     const modalHeader = document.createElement("div");
     modalHeader.setAttribute("class", "modal-header");
-
     const modalId = document.createElement("h6");
     modalId.setAttribute("id", "cakeId");
     const text3 = document.createTextNode(`${res.data.id}`);
     modalId.appendChild(text3);
-
     const modalName = document.createElement("h5");
     modalName.setAttribute("class", "modal-title");
     modalName.setAttribute("id", `${res.data.id}ModalLabel`);
-
     const text4 = document.createTextNode(`${res.data.cakeName}`);
     modalName.appendChild(modalId);
     modalName.appendChild(text4);
     modalHeader.appendChild(modalName);
-
     const closeButton = document.createElement("button");
     closeButton.setAttribute("type", "button");
     closeButton.setAttribute("class", "btn-close");
@@ -89,14 +83,22 @@ const addCakeToContentArea = (res) => {
     modalContent.appendChild(modalHeader);
     const modalBody = document.createElement("div");
     modalBody.setAttribute("class", "modal-body");
-
     const text5 = document.createTextNode(`${res.data.cakeDescription}`);
-
     modalBody.appendChild(text5);
     modalContent.appendChild(modalBody);
-
     const modalFooter = document.createElement("div");
     modalFooter.setAttribute("class", "modal-footer");
+
+    const deleteButton = document.createElement("button");
+    deleteButton.setAttribute("type", "button");
+    deleteButton.setAttribute("class", "btn btn-danger");
+    deleteButton.setAttribute("data-bs-dismiss", "modal");
+    deleteButton.setAttribute("id", "deleteButton");
+    deleteButton.setAttribute("onClick", "deleteCake()");
+    const text7 = document.createTextNode("Delete");
+    deleteButton.appendChild(text7);
+    modalFooter.appendChild(deleteButton);
+
     const closeButton2 = document.createElement("button");
     closeButton2.setAttribute("type", "button");
     closeButton2.setAttribute("class", "btn btn-secondary");
@@ -105,17 +107,6 @@ const addCakeToContentArea = (res) => {
     closeButton2.appendChild(text6);
     modalFooter.appendChild(closeButton2);
 
-    const deleteButton = document.createElement("button");
-    deleteButton.setAttribute("type", "button");
-    deleteButton.setAttribute("class", "btn btn-danger");
-    deleteButton.setAttribute("data-bs-dismiss", "modal");
-    deleteButton.setAttribute("id", "deleteButton");
-    deleteButton.setAttribute("onClick", "deleteCake()");
-
-
-    const text7 = document.createTextNode("Delete");
-    deleteButton.appendChild(text7);
-    modalFooter.appendChild(deleteButton);
 
 
 
@@ -125,9 +116,7 @@ const addCakeToContentArea = (res) => {
     bodyDiv.appendChild(modalDiv);
     mainDiv.appendChild(bodyDiv);
     display.appendChild(mainDiv);
-
 }
-
 const createCake = () => {
     const cakeNameValue = cakeName.value;
     const cakeURLValue = cakeURL.value;
@@ -158,12 +147,17 @@ const getCakeByName = () => {
         .catch(err => console.log(err));
 }
 
+const resetModal = () => {
+    searchBody.innerHTML = "";
+    searchTitle.innerHTML = "";
+}
+
+
 // delete a cake
 const deleteCake = () => {
     const cakeId = document.querySelector("#cakeId");
     const id = cakeId.innerHTML;
     const toRemoveFromDisplay = document.querySelector(`#mainDiv${id}`);
-
     axios
         .delete(`${URL}/remove/${id}`)
         .then(res => {
@@ -172,11 +166,16 @@ const deleteCake = () => {
             }
             display.removeChild(toRemoveFromDisplay);
         }).catch(err => console.log(err));
-
-
 }
+
+
+
+//update a cake
 
 
 //Event listeners
 createButton.addEventListener("click", createCake);
 searchButton.addEventListener("click", getCakeByName);
+searchModalClose.addEventListener("click", resetModal);
+searchTopClose.addEventListener("click",resetModal);
+searchDeleteButton.addEventListener("click",resetModal);
