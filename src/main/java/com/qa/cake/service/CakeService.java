@@ -1,18 +1,14 @@
 package com.qa.cake.service;
-
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.qa.cake.domain.Cake;
 import com.qa.cake.repository.CakeRepository;
 
 @Service
-public class CakeService {
-	
-	
+public class CakeService { 
+
 	@Autowired
 	private CakeRepository repository;
 	
@@ -30,6 +26,14 @@ public class CakeService {
 	
 	public Cake getById(Long id) {
 		Optional<Cake> optionalCake = repository.findById(id);
+		if(optionalCake.isPresent()) {
+			return optionalCake.get();
+		}
+		return null;
+	}
+	
+	public Cake getByCakeName(String cakeName) {
+		Optional<Cake> optionalCake = repository.findByCakeName(cakeName);
 		if(optionalCake.isPresent()) {
 			return optionalCake.get();
 		}
