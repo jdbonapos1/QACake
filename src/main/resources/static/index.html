@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E & J's Cakeclopedia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="./CSS/index.css" rel="stylesheet">
+</head>
+
+<body onload="loadCakes()">
+    <div class="container-fluid">
+        <!-- Header row -->
+        <header>
+            <div class="row">
+                <div class="col" >
+                    <img src="https://user-images.githubusercontent.com/100294516/164706689-bab87eb3-2a75-4d59-9206-250600cf383a.png" width="225" height="225"
+                        alt="Logo">
+                
+                </div>
+                <div class="col" >
+                    <h1 class = "page-title"> <strong> E & J's Cakeclopedia</strong></h1> 
+                </div>
+                <div class="col" >
+                    <img src="https://silicondales.com/wp-content/uploads/2012/05/twitter-logo.jpg" width="50" height="50" alt="twitter">
+                    <img src="https://www.bing.com/th?id=OIP.vVBHvUTzXuPNovUTHD0D8QHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2" width ="50" height ="50" alt="instagram">
+                    <img src="https://www.bing.com/th?id=OIP.55DCXbXlKDgEBoZhKxpzLAHaHa&w=150&h=150&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2" width="50" height="50" alt="facebook">
+                    <img src="https://www.bing.com/th?id=OIP.hR6TQma4SWfP-yfQmT5oqgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2" alt="youtube" width="75" height="75">
+                </div>
+            </div>
+            <hr>
+            <!-- Search row -->
+            <div class="row">
+                <div class="col" >
+                    <h1 class = "logo"> Knowin' what to bake, is a piece of cake!</h1>
+                </div>
+                <div class="col">
+                    <form >
+                        <!-- Button trigger search modal -->
+                        <input id="searchName" placeholder="search by cake name..." type="text">
+                        <button id="searchButton2" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal">
+                            Search Name
+                        </button>
+                        <input id="searchId" placeholder="search by cake id..." type="number">
+                        <button id="searchButton" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal">
+                            Search Id
+                        </button>
+                        
+                        <!-- Search Modal -->
+                        <div class="modal fade" id="searchModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                            aria-labelledby="searchModal" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-center">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="searchModalTitle"></h5>
+                                        <button id="searchTopClose" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body" id="searchModalBody">
+                                     
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="searchModalClose" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        </header>
+        <main>
+            <!-- Cake content row -->
+            <div class="row">
+                <div class="col">
+                </div>
+                <div class="col-8">
+                    <div class = "row" id="contentArea">
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        </main>
+        <hr>
+        <footer>
+            <!-- Cake creation section -->
+            <div class="row">
+                <div class="col" id="createBox" onload="loadCakes()">
+                    <h1 class="manage"> Manage Cakes</h1>
+                    <form>
+                        <h3>Add a cake</h3>
+                        <div class="row g-2 align-items-center">
+                            <div class="col-auto">
+                                <label for="cakeNameInput" class="col-form-label">Cake Name</label>
+                            </div>
+                            <div class="col-auto">
+                                <input id="cakeNameInput" class="form-control"
+                                   maxlength="255" >
+                            </div>
+                        </div>
+                        <div class="row g-2 align-items-center">
+                            <div class="col-auto">
+                                <label for="cakeDescriptionInput" class="col-form-label">Description</label>
+                            </div>
+                            <div class="col-auto">
+                                <textarea id="cakeDescriptionInput" class="form-control" rows="3" maxlength="255"></textarea>
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-center">
+                            <div class="col-auto">
+                                <label for="cakeURLInput" class="col-form-label">Image URL</label>
+                            </div>
+                            <div class="col-auto">
+                                <input id="cakeURLInput" class="form-control"
+                                   maxlength="255" >
+                            </div>
+                            <div class="col-auto">
+                                <input id="createButton" class="btn btn-success" type="button" value="Create">
+                            </div>
+                        </div>
+                    </form>
+                    <hr>
+                    <form>
+                        <h3>Update a cake</h3>
+                        <div class="row g-2 align-items-center">
+                            <div class="col-auto">
+                                <label for="updateCakeIdInput" class="col-form-label">Cake Id</label>
+                            </div>
+                            <div class="col-auto">
+                                <input id="updateCakeIdInput" type="number" class="form-control">
+                            </div>
+                            <div class="col-auto">
+                                <label for="updateCakeNameInput" class="col-form-label">Cake Name</label>
+                            </div>
+                            <div class="col-auto">
+                                <input id="updateCakeNameInput" class="form-control" maxlength="255">
+                            </div>
+                        </div>
+                        <div class="row g-2 align-items-center">
+                            <div class="col-auto">
+                                <label for="updateCakeDescriptionInput" class="col-form-label">Description and recipe</label>
+                            </div>
+                            <div class="col-auto">
+                                <textarea id="updateCakeDescriptionInput" class="form-control" rows="3" maxlength="255"></textarea>
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-center">
+                            <div class="col-auto">
+                                <label for="updateCakeURLInput" class="col-form-label">Image URL</label>
+                            </div>
+                            <div class="col-auto">
+                                <input id="updateCakeURLInput" class="form-control" maxlength="255">
+                            </div>
+                            <div class="col-auto">
+                                <input id="updateButton" class="btn btn-warning" type="button" value="Update" onclick="updateCake()">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col">
+                    <div class="row" id="box">
+                        <H1 id="ube"> Ube Cake</H1>
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://theunlikelybaker.com/wp-content/uploads/2016/11/Ube-Cake-Filipino-Purple-Yam-Cake-FB.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"> Cake of the day!!</h5>
+                                <p class="card-text">Once again this Filipino cake proves to be the fan favourite!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+        integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="./JS/index.js"></script>
+</body>
+</html>
