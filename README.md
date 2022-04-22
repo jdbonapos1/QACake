@@ -18,8 +18,35 @@ I used Jira software to create my Kanban board, I selected the scrum model. Here
 
 ![Example of a user story](https://user-images.githubusercontent.com/100294516/164675878-13e127b9-c30d-4c3c-a9f4-e2fc360a7baa.png)
 
+![Here are the epics used](https://user-images.githubusercontent.com/100294516/164676724-07965a14-4fa0-4f7e-a268-8727ff636eb4.png)
+
+
 One of the first tasks set on my user stories were to design a template for my web page. I used draw.io and Invisionfreehand to sketch an initial template and then a prototype webpage. 
+
 ![Initial template ](https://user-images.githubusercontent.com/100294516/164676248-d27e2ccb-8244-457b-904e-8bce041a497a.png)
 
 ![Prototype of Eri's Cakelopedia](https://user-images.githubusercontent.com/100294516/164676300-cc790ef1-c215-4da1-8c9a-27c7f7ca844b.png)
+
+# Continous Integration (GIT)
+I created a Github repository and made commits using the feature branch model. Pulling each sub-branch to dev then fnally onto master.
+![2](https://user-images.githubusercontent.com/100294516/164680622-847c3a81-9bdc-462b-8b6a-094b1d26967d.png)
+
+
+
+![Network Graph](https://user-images.githubusercontent.com/100294516/164681053-f9703238-1790-4c2e-8997-f9331c93d3a5.png)
+However, I ran into a problem at a late stage with integration so I created a dev2 replacement branch and made all following commits from there.
+
+# Databases SQL
+Two seperate databases were used, a local H2 database and a mySQL database that stores persistent data from the application. I created thesse on the mySQL Command Line. 
+![Screenshot 2022-04-21 141533](https://user-images.githubusercontent.com/100294516/164688704-14475bdb-1a76-489b-bf2a-f46df8fb6c08.png)
+
+![select  star cake](https://user-images.githubusercontent.com/100294516/164689049-6dae9fd5-f993-4d80-8813-2ed5c49ec183.png)
+
+# Back-end
+The projects back-end was created using Java implemented with Spring Boot Framework. I carefully sectioned my code within classes and interfaces making sure to apply Kanban board requirements.
+![CakeController](https://user-images.githubusercontent.com/100294516/164701468-8f3b4556-7ca4-4815-9f20-492dd94a91b6.png)
+
+# Testing
+
+
 
