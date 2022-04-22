@@ -48,7 +48,7 @@ public class CakeController {
 		} catch (NoSuchElementException e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-	}
+	} 
 	@PutMapping("/update/{index}")
 	public ResponseEntity<Cake> updateCakeById(@PathVariable Long index, @RequestBody Cake cake) {
 		try {

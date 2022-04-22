@@ -1,5 +1,16 @@
  
 /* App wide css */
+
+body{
+    background-color:bisque;
+}
+
+.page-title{
+font-size: 80px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+color:#aacc66
+}
+
 p {
     text-align: center;
 }
@@ -12,11 +23,26 @@ div {
     text-align: center;
 }
 
+.logo{
+    font-family: sans-serif;
+    color: #9664C8;
+}
+
 .card.cake{
     width: 300px;
-    border: 10px solid rgb(206, 110, 33);
+    border: 10px solid rgb(33, 206, 50);
     padding: 10px;
     margin: 5px;
+}
+
+.manage{
+    font-family: sans-serif;
+    color: #9664C8;
+}
+
+h3{
+    font-family: sans-serif;
+    color: #9664C8;
 }
 
 
@@ -34,14 +60,29 @@ hr {
 
 #box {
     width: 300px;
-    border: 10px solid rgb(206, 110, 33);
+    border: 10px solid rgb(186, 206, 33);
     padding: 10px;
     margin: 5px;
 }
 
 #createBox {
     width: 300px;
-    border: 10px solid rgb(206, 110, 33);
+    border: 10px solid rgba(33, 206, 50, 0.878);
     padding: 10px;
     margin: 5px;
+}
+
+#ube{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:#9664C8;
+}
+
+.card-title{
+    font-family: sans-serif;
+    color: #9664C8;
+}
+
+.card-text{
+    font-family: Arial, Helvetica, sans-serif;
+    color:#aacc66;
 }
