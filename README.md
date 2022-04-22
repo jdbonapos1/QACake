@@ -47,6 +47,16 @@ The projects back-end was created using Java implemented with Spring Boot Framew
 ![CakeController](https://user-images.githubusercontent.com/100294516/164701468-8f3b4556-7ca4-4815-9f20-492dd94a91b6.png)
 
 # Testing
+Integration testing was done such as MockMVC testing to deploy a partial part of the application which siumlates a user input
+I used MockMVC to create a mock controller class, to perform HTTP request that simulate a user using the programme. I used it to test the create method.
 
+![cakecontrollertest2](https://user-images.githubusercontent.com/100294516/164718582-d07ddc34-f4c1-45b4-9367-fdeafa83ae9d.png)
 
+I found this area particular difficult and  given I had more time I would've completed it. I now know that I should focus more time and work into testing for my next project
 
+# Front-End
+The front-end webpage was constructed using HTML, CSS and JavaScript. I also used the Boostrap framework to create components such as forms, modals and even styling on CSS. HTML provided the fundamental structure, CSS added them and design and JS was used to allow the webpage to interact with inputs to improve overall user experience. (e.g. modals popping up when clicking show cake) It was also used to for API integration with axios.
+
+![1](https://user-images.githubusercontent.com/100294516/164720344-0ba2034c-d214-4f08-a92f-c806287a7ed8.png)
+![2](https://user-images.githubusercontent.com/100294516/164720358-98dec23c-d8ee-492a-8c92-6574ff9f4f2d.png)
+![3](https://user-images.githubusercontent.com/100294516/164720365-07fa62db-ab9b-4476-ab2e-fedd7739d019.png)
