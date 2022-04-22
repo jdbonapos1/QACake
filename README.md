@@ -14,6 +14,6 @@ Front-End - API Integration
 
 # Planning
 I used Jira software to create my Kanban board, I selected the scrum model. Here I began with creating user stories and tasks, assigning them to appropriate epics. I also made sure to implement agile principles and moscow prioritisation while also providing story point estimates.
-![Initial user story] (C:\Users\johnb\OneDrive\Documents\Cake Project QA\QAProjectCake\Documentation\Jira\boardexample.png)
+![Initial user story](C:\Users\johnb\OneDrive\Documents\Cake Project QA\QAProjectCake\Documentation\Jira\boardexample.png)
 
 
