@@ -4,7 +4,7 @@ by JD Bonapos
 
 # Introduction
 The brief specified that the task was to design and create a crud application with a visual front-end that encapsulated all core modules. 
-For my project I decided to create an inventory that stores information on cakes, where uses can add their own cakes to the database while also making other necessary changes. The API comes with a fully CRUD functional front-end webpage in which uses can interact and provide inputs.
+For my project I decided to create an inventory that stores information on cakes, where users can add their own cakes to the database while also making other necessary changes. The API comes with a fully CRUD functional front-end webpage in which users can interact and provide inputs.
 
 
 # Scope
@@ -16,7 +16,7 @@ Front-End - API Integration
 
 
 # Planning
-I used Jira software to create my Kanban board, I selected the scrum model. Here I began with creating user stories and tasks, assigning them to appropriate epics. I also made sure to implement agile principles and moscow prioritisation while also providing story point estimates. AFter filling up the backlog, I started a sprint to help me track tasks. The sprint board was used to manage tasks moving them fron to do to in progress to done.
+I used Jira software to create my Kanban board, I selected the scrum model. Here I began with creating user stories and tasks, assigning them to appropriate epics. I also made sure to implement agile principles and moscow prioritisation while also providing story point estimates. AFter filling up the backlog, I started a sprint to help me track my tasks. The sprint board was used to manage tasks moving them from: - to do to in progress to - done.
 ![Example of the user stories board](https://user-images.githubusercontent.com/100294516/164675423-1385ba7d-e96d-48ba-a0b7-cad5ae5a70cb.png)
 
 ![Example of a user story](https://user-images.githubusercontent.com/100294516/164675878-13e127b9-c30d-4c3c-a9f4-e2fc360a7baa.png)
@@ -37,7 +37,7 @@ I created a Github repository and made commits using the feature branch model. P
 
 
 ![Network Graph](https://user-images.githubusercontent.com/100294516/164681053-f9703238-1790-4c2e-8997-f9331c93d3a5.png)
-However, I ran into a problem at a late stage with integration so I created a dev2 replacement branch and made all following commits from there.
+However, I ran into a problem at a late stage with integration so I created a dev2 replacement branch and made all following commits from there to save time and confusion.
 
 
 # Databases SQL
@@ -54,12 +54,12 @@ The projects back-end was created using Java implemented with Spring Boot Framew
 
 
 # Testing
-Integration testing was done such as MockMVC testing to deploy a partial part of the application which siumlates a user input
-I used MockMVC to create a mock controller class, to perform HTTP request that simulate a user using the programme. I used it to test the create method.
+Integration testing was done such as MockMVC testing to deploy a partial part of the application which simulates a user input.
+I used MockMVC to create a mock controller class, which performed HTTP request that simulates a user using the programme. I used it to test the create method.
 
 ![cakecontrollertest2](https://user-images.githubusercontent.com/100294516/164718582-d07ddc34-f4c1-45b4-9367-fdeafa83ae9d.png)
 
-I found this area particular difficult and  given I had more time I would've completed it. I now know that I should focus more time and work into testing for my next project
+I found this area particularly difficult and  given I had more time I would've completed it. I now know that an improvement would be to focus more time and work into testing for my next project.
 
 
 # Front-End
